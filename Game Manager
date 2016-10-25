@@ -1,0 +1,25 @@
+//create empty object game manager and attach the following code
+using UnityEngine;
+using System.Collections;
+
+public class GameManager : MonoBehaviour {
+    public Maze mazePrefab;
+    private Maze mazeInstance;
+    public int sizeC, sizeZ;
+    public MazeCell cellPrefab;
+    private MazeCell[,] cells;
+
+	private void Start () {
+		BeginGame();
+	}	
+	private void Update () {
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			RestartGame();
+		}
+	}
+	private void BeginGame () {
+        Destroy(mazeInstance.gameObject);
+        BeginGame();
+    }
+	private void RestartGame () {}
+}
